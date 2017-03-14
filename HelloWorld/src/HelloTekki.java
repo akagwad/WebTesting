@@ -20,6 +20,7 @@ public class HelloTekki {
 
   @Before
   public void setUp() throws Exception {
+	  System.out.println("Run Started!");
 	System.setProperty("webdriver.gecko.driver", "/Users/achalkagwad/Documents/ATF_Downloadables/geckodriver");
     driver = new FirefoxDriver();
     baseUrl = "http://192.168.0.244:8000/";
