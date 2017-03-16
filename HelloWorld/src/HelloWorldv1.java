@@ -24,7 +24,7 @@ public class HelloWorldv1 {
     driver = new FirefoxDriver();
     baseUrl = "https://www.google.com.sg/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+//    driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
   }
 
   @Test
@@ -39,7 +39,7 @@ public class HelloWorldv1 {
 
   @After
   public void tearDown() throws Exception {
-    driver.quit();
+//    driver.quit();
     String verificationErrorString = verificationErrors.toString();
     if (!"".equals(verificationErrorString)) {
       fail(verificationErrorString);

@@ -25,9 +25,9 @@ public class HelloWorldV2 {
   public void setUp() throws Exception {
 	System.setProperty("webdriver.gecko.driver", "/Users/achalkagwad/Documents/ATF_Downloadables/geckodriver");
 	System.setProperty("webdriver.chrome.driver", "/Users/achalkagwad/Documents/ATF_Downloadables/chromedriver");
-//    driver = new FirefoxDriver();
+    driver = new FirefoxDriver();
 //	driver = new ChromeDriver();
-	driver = new SafariDriver();
+//	driver = new SafariDriver();
     baseUrl = "https://www.google.com.sg/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
