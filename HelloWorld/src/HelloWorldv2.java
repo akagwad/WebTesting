@@ -15,7 +15,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class HelloWorldV2 {
+public class HelloWorldv2 {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
