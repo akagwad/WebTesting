@@ -1,6 +1,8 @@
 package com.paloit.mac.ff;
-
-
+import java.util.logging.FileHandler;
+import java.util.logging.Handler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 
@@ -19,10 +21,17 @@ public class HelloTekki {
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
+  private final static Logger LOGGER = Logger.getLogger(HelloTekki.class.getName());
 
   @Before
   public void setUp() throws Exception {
-	  System.out.println("Run Started! Mac-Firefox");
+	System.out.println("Test Run Started! Mac-Firefox");
+	Handler fileHandler  = new FileHandler("./src/com/paloit/mac/ff/tekki_Mac_Firefox.log");
+	LOGGER.addHandler(fileHandler);
+	//Setting levels to handlers and LOGGER
+	fileHandler.setLevel(Level.ALL);
+	LOGGER.setLevel(Level.ALL);
+
 	System.setProperty("webdriver.gecko.driver", "./Mac_Dependencies/geckodriver");
     driver = new FirefoxDriver();
     baseUrl = "http://192.168.0.244:8000/";
@@ -45,6 +54,10 @@ public class HelloTekki {
     String verificationErrorString = verificationErrors.toString();
     if (!"".equals(verificationErrorString)) {
       fail(verificationErrorString);
+      LOGGER.log(Level.INFO,"Tekki Login Feature Failed!: Test Failed");
+    }
+    else{
+    	LOGGER.log(Level.INFO,"Tekki Login Feature is succesful!: Test Pass");
     }
   }
 
