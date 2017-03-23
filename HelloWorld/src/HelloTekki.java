@@ -9,7 +9,9 @@ import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.Select;
 
 public class HelloTekki {
@@ -21,8 +23,11 @@ public class HelloTekki {
   @Before
   public void setUp() throws Exception {
 	  System.out.println("Run Started!");
-	System.setProperty("webdriver.gecko.driver", "/Users/achalkagwad/Documents/ATF_Downloadables/geckodriver");
-    driver = new FirefoxDriver();
+	System.setProperty("webdriver.gecko.driver", "./Mac_Dependencies/geckodriver");
+	System.setProperty("webdriver.chrome.driver", "./Mac_Dependencies/chromedriver");
+//    driver = new FirefoxDriver();
+//    driver = new ChromeDriver();
+    driver = new SafariDriver();
     baseUrl = "http://192.168.0.244:8000/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }

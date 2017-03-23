@@ -21,7 +21,7 @@ public class HelloTekkiv1 {
 
   @Before
   public void setUp() throws Exception {
-	  System.out.println("Run Started!");
+	System.out.println("Run Started!Mac-HtmlUnitDriver");
 //	System.setProperty("webdriver.gecko.driver", "/Users/achalkagwad/Documents/ATF_Downloadables/geckodriver");
 //    driver = new FirefoxDriver();
 	driver = new HtmlUnitDriver();
@@ -41,7 +41,7 @@ public class HelloTekkiv1 {
 
   @After
   public void tearDown() throws Exception {
-//    driver.quit();
+    driver.quit();
     String verificationErrorString = verificationErrors.toString();
     if (!"".equals(verificationErrorString)) {
       fail(verificationErrorString);
